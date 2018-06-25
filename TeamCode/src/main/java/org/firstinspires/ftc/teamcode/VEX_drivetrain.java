@@ -12,6 +12,7 @@ public class Vex_drivetrain extends OpMode{
     public DcMotor motorBackRight;
     public DcMotor motorBackLeft;
     public DcMotor launcher;
+    public DcMotor transport;
 
     public void init() {
         motorFrontRight = hardwareMap.dcMotor.get("frontRight");
@@ -19,6 +20,7 @@ public class Vex_drivetrain extends OpMode{
         motorBackRight = hardwareMap.dcMotor.get("backRight");
         motorBackLeft = hardwareMap.dcMotor.get("backLeft");
         launcher = hardwareMap.dcMotor.get("launcher");
+        transport = hardwareMap.dcMotor.get("transport");
     }
 
     public void loop() {
@@ -28,11 +30,19 @@ public class Vex_drivetrain extends OpMode{
         motorBackLeft.setPower(-gamepad1.left_stick_y);
 
         if(gamepad2.dpad_up) {
-            launcher.setPower(90);
+            launcher.setPower(0.9);
         } else if(gamepad2.dpad_down) {
-            launcher.setPower(60);
+            launcher.setPower(0.6);
         } else {
-            launcher.setPower(0);
+            launcher.setPower(0.0);
+        }
+
+        if(gamepad2.a) {
+            transport.setPower(1.0);
+        } else if(gamepad2.b) {
+            transport.setPower(-1.0);
+        } else {
+            transport.setPower(0.0);
         }
     }
 }
