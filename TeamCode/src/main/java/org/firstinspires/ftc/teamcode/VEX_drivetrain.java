@@ -5,7 +5,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
 @TeleOp(name = "VEX Game Robot", group = "summerProjects")
-public class Vex_drivetrain extends OpMode{
+public class Vex_drivetrain extends OpMode {
 
     public DcMotor motorFrontRight;
     public DcMotor motorFrontLeft;
