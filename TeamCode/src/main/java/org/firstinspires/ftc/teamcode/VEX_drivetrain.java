@@ -37,9 +37,9 @@ public class Vex_drivetrain extends OpMode{
         motorBackLeft.setPower(-gamepad1.left_stick_y);
 
         if(gamepad2.dpad_up) {
-            launcher.setTargetPosition(launcher.getTargetPosition() + 1);
+            launcher.setTargetPosition(launcher.getTargetPosition() + 10);
         } else if(gamepad2.dpad_down) {
-            launcher.setTargetPosition(launcher.getTargetPosition() - 1);
+            launcher.setTargetPosition(launcher.getTargetPosition() + 5);
         }
 
         if(gamepad2.a) {
