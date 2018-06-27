@@ -26,7 +26,7 @@ public class Vex_drivetrain extends OpMode{
         collector = hardwareMap.dcMotor.get("collector");
 
         launcher.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        launcher.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        launcher.setMode(DcMotor.RunMode.RUN_USING_ENCODER); //rawrhhh
         launcher.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
     }
 
