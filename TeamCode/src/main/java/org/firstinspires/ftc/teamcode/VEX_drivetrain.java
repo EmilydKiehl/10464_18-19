@@ -4,25 +4,22 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
-@TeleOp(name = "VEX_Drivetrain", group = "summerProjects")
-public class Vex_Drivetrain extends OpMode {
+@TeleOp(name = "VEX_drivetrain", group = "summerProjects")
+public class Vex_drivetrain extends OpMode{
 
-    private DcMotor motorFrontRight;
-    private DcMotor motorFrontLeft;
-    private DcMotor motorBackRight;
-    private DcMotor motorBackLeft;
-    private DcMotor launcher;
-    private DcMotor transport;
-    private DcMotor collector;
+    public DcMotor motorFrontRight;
+    public DcMotor motorFrontLeft;
+    public DcMotor motorBackRight;
+    public DcMotor motorBackLeft;
+    public DcMotor launcher;
+    public DcMotor transport;
+    public DcMotor collector;
 
     public void init() {
         motorFrontRight = hardwareMap.dcMotor.get("frontRight");
         motorFrontLeft = hardwareMap.dcMotor.get("frontLeft");
         motorBackRight = hardwareMap.dcMotor.get("backRight");
         motorBackLeft = hardwareMap.dcMotor.get("backLeft");
-
-        motorFrontRight.setDirection(DcMotor.Direction.REVERSE);
-        motorBackRight.setDirection(DcMotor.Direction.REVERSE);
 
         launcher = hardwareMap.dcMotor.get("launcher");
         transport = hardwareMap.dcMotor.get("transport");
@@ -36,15 +33,13 @@ public class Vex_Drivetrain extends OpMode {
     public void loop() {
         motorFrontRight.setPower(gamepad1.right_stick_y);
         motorFrontLeft.setPower(gamepad1.left_stick_y);
-        motorBackRight.setPower(gamepad1.right_stick_y);
-        motorBackLeft.setPower(gamepad1.left_stick_y);
+        motorBackRight.setPower(-gamepad1.right_stick_y);
+        motorBackLeft.setPower(-gamepad1.left_stick_y);
 
         if(gamepad2.dpad_up) {
-            launcher.setPower(85);
+            launcher.setTargetPosition(launcher.getTargetPosition() + 10);
         } else if(gamepad2.dpad_down) {
-            launcher.setPower(60);
-        } else {
-            launcher.setPower(0);
+            launcher.setTargetPosition(launcher.getTargetPosition() + 5);
         }
 
         if(gamepad2.a) {
