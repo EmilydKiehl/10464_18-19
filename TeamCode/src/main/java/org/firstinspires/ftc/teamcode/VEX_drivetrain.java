@@ -6,7 +6,6 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 
 @TeleOp(name = "VEX_Drivetrain", group = "summerProjects")
 public class Vex_Drivetrain extends OpMode {
-
     private DcMotor motorFrontRight;
     private DcMotor motorFrontLeft;
     private DcMotor motorBackRight;
