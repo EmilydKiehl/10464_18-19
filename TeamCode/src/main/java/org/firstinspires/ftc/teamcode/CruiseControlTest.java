@@ -103,6 +103,8 @@ public class CruiseControlTest extends OpMode {
             ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
             executor.scheduleAtFixedRate(cruiseCheck, 1, 1, TimeUnit.SECONDS);
         }
+        
+        run();
 
         motorFrontLeft.setPower(0);
 //        motorBackRight.setPower(0);
